@@ -19,8 +19,9 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
-import org.apache.commons.lang.Validate;
-import org.apache.log4j.Logger;
+import org.apache.commons.lang3.Validate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -38,7 +39,7 @@ import java.util.Set;
  */
 public class ZooKeeperTreeState {
 
-    private static final Logger logger = Logger.getLogger(ZooKeeperTreeState.class);
+    private static final Logger logger = LoggerFactory.getLogger(ZooKeeperTreeState.class);
 
     private static final Set<ZooKeeperTreeNode> EMPTY_SET = Collections.emptySet();
     private static final ImmutableMap<String, ZooKeeperTreeNode> EMPTY_MAP = ImmutableMap.of();

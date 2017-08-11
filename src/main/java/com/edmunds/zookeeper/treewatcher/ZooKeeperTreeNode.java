@@ -16,13 +16,13 @@
 package com.edmunds.zookeeper.treewatcher;
 
 import com.google.common.collect.ImmutableMap;
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-import static org.apache.commons.lang.StringUtils.isEmpty;
+import static org.apache.commons.lang3.StringUtils.isEmpty;
 
 /**
  * Represents a node in the ZooKeeper tree.

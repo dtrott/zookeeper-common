@@ -15,8 +15,8 @@
  */
 package com.edmunds.zookeeper.connection;
 
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Validate;
 
 /**
  * Configuration bean for a {@link ZooKeeperConnection}.

@@ -15,10 +15,11 @@
  */
 package com.edmunds.zookeeper.connection;
 
-import org.apache.log4j.Logger;
 import org.apache.zookeeper.AsyncCallback;
 import org.apache.zookeeper.KeeperException.Code;
 import org.apache.zookeeper.data.Stat;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -34,7 +35,7 @@ import java.util.List;
  */
 public class ZooKeeperNodeInitializer implements ZooKeeperInitializer {
 
-    private static final Logger logger = Logger.getLogger(ZooKeeperNodeInitializer.class);
+    private static final Logger logger = LoggerFactory.getLogger(ZooKeeperNodeInitializer.class);
     private static final List<Code> retryableErrors = Arrays.asList(
             Code.RUNTIMEINCONSISTENCY,
             Code.DATAINCONSISTENCY,

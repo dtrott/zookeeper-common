@@ -1,8 +1,8 @@
 package com.edmunds.zookeeper.election;
 
 import com.edmunds.zookeeper.connection.ZooKeeperConnection;
-import org.easymock.classextension.EasyMock;
-import org.easymock.classextension.IMocksControl;
+import org.easymock.EasyMock;
+import org.easymock.IMocksControl;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;

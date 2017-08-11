@@ -18,10 +18,11 @@ package com.edmunds.zookeeper.treewatcher;
 import com.edmunds.zookeeper.connection.ZooKeeperConnection;
 import com.edmunds.zookeeper.connection.ZooKeeperConnectionListener;
 import com.edmunds.zookeeper.connection.ZooKeeperConnectionState;
-import org.apache.log4j.Logger;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.data.Stat;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -42,7 +43,7 @@ import static org.apache.zookeeper.KeeperException.Code;
  */
 public class ZooKeeperTreeWatcher implements Watcher {
 
-    private static final Logger logger = Logger.getLogger(ZooKeeperTreeWatcher.class);
+    private static final Logger logger = LoggerFactory.getLogger(ZooKeeperTreeWatcher.class);
 
     private final ZooKeeperConnection connection;
     private final int rootLevel;

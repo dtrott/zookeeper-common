@@ -16,8 +16,7 @@
 package com.edmunds.zookeeper.election;
 
 import com.edmunds.zookeeper.connection.ZooKeeperConnection;
-import org.apache.commons.lang.Validate;
-import org.apache.log4j.Logger;
+import org.apache.commons.lang3.Validate;
 import org.apache.zookeeper.AsyncCallback.Children2Callback;
 import org.apache.zookeeper.AsyncCallback.DataCallback;
 import org.apache.zookeeper.AsyncCallback.StringCallback;
@@ -28,6 +27,8 @@ import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher.Event.EventType;
 import org.apache.zookeeper.Watcher.Event.KeeperState;
 import org.apache.zookeeper.data.Stat;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -70,7 +71,7 @@ public class ZooKeeperElection {
     /**
      * The logger.
      */
-    private static final Logger logger = Logger.getLogger(ZooKeeperElection.class);
+    private static final Logger logger = LoggerFactory.getLogger(ZooKeeperElection.class);
 
     private static final Comparator<String> SEQUENTIAL_COMPARATOR = new ZooKeeperSequentialValueComparator();
 

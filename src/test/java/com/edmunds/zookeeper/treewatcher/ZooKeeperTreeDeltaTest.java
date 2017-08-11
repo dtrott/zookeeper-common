@@ -17,7 +17,8 @@ package com.edmunds.zookeeper.treewatcher;
 
 import com.google.common.collect.ImmutableMap;
 import org.easymock.Capture;
-import org.easymock.classextension.IMocksControl;
+import org.easymock.EasyMock;
+import org.easymock.IMocksControl;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -26,8 +27,8 @@ import java.util.List;
 import static com.edmunds.zookeeper.treewatcher.ZooKeeperTreeDelta.Walk.LEAF_FIRST;
 import static com.edmunds.zookeeper.treewatcher.ZooKeeperTreeDelta.Walk.ROOT_FIRST;
 import static com.edmunds.zookeeper.treewatcher.ZooKeeperTreeDelta.Walk.ROOT_ONLY;
-import static org.easymock.classextension.EasyMock.capture;
-import static org.easymock.classextension.EasyMock.createControl;
+import static org.easymock.EasyMock.capture;
+import static org.easymock.EasyMock.createControl;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertSame;
 
@@ -96,7 +97,7 @@ public class ZooKeeperTreeDeltaTest {
         treeState2.insertNode("/a", b);
         treeState2.insertNode("/a", c);
 
-        final Capture<ZooKeeperTreeDeltaResult> cap = new Capture<ZooKeeperTreeDeltaResult>();
+        final Capture<ZooKeeperTreeDeltaResult> cap = EasyMock.newCapture();
         callback.treeChanged(capture(cap));
         control.replay();
 
@@ -121,7 +122,7 @@ public class ZooKeeperTreeDeltaTest {
         treeState2.insertNode("/a", b);
         treeState2.insertNode("/a", c);
 
-        final Capture<ZooKeeperTreeDeltaResult> cap = new Capture<ZooKeeperTreeDeltaResult>();
+        final Capture<ZooKeeperTreeDeltaResult> cap = EasyMock.newCapture();
         callback.treeChanged(capture(cap));
         control.replay();
 
@@ -152,7 +153,7 @@ public class ZooKeeperTreeDeltaTest {
 
         treeState2.setData("/a/b/e", "world".getBytes());
 
-        final Capture<ZooKeeperTreeDeltaResult> cap = new Capture<ZooKeeperTreeDeltaResult>();
+        final Capture<ZooKeeperTreeDeltaResult> cap = EasyMock.newCapture();
         callback.treeChanged(capture(cap));
         control.replay();
 
@@ -175,7 +176,7 @@ public class ZooKeeperTreeDeltaTest {
 
         treeState2.insertNode("/a", b);
 
-        final Capture<ZooKeeperTreeDeltaResult> cap = new Capture<ZooKeeperTreeDeltaResult>();
+        final Capture<ZooKeeperTreeDeltaResult> cap = EasyMock.newCapture();
         callback.treeChanged(capture(cap));
         control.replay();
 
@@ -200,7 +201,7 @@ public class ZooKeeperTreeDeltaTest {
 
         treeState2.insertNode("/a", c);
 
-        final Capture<ZooKeeperTreeDeltaResult> cap = new Capture<ZooKeeperTreeDeltaResult>();
+        final Capture<ZooKeeperTreeDeltaResult> cap = EasyMock.newCapture();
         callback.treeChanged(capture(cap));
         control.replay();
 
@@ -230,7 +231,7 @@ public class ZooKeeperTreeDeltaTest {
         treeState2.deleteNode("/a/c/f");
         treeState2.deleteNode("/a/b");
 
-        final Capture<ZooKeeperTreeDeltaResult> cap = new Capture<ZooKeeperTreeDeltaResult>();
+        final Capture<ZooKeeperTreeDeltaResult> cap = EasyMock.newCapture();
         callback.treeChanged(capture(cap));
         control.replay();
 

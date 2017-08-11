@@ -15,9 +15,8 @@
  */
 package com.edmunds.zookeeper.connection;
 
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.Validate;
-import org.apache.log4j.Logger;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Validate;
 import org.apache.zookeeper.AsyncCallback;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
@@ -28,6 +27,8 @@ import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.ACL;
 import org.apache.zookeeper.data.Stat;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -62,7 +63,7 @@ import java.util.Set;
 @Component
 public class ZooKeeperConnection {
 
-    private static final Logger logger = Logger.getLogger(ZooKeeperConnection.class);
+    private static final Logger logger = LoggerFactory.getLogger(ZooKeeperConnection.class);
 
     private static final List<ACL> DEFAULT_ACL = ZooDefs.Ids.OPEN_ACL_UNSAFE;
 
@@ -196,7 +197,7 @@ public class ZooKeeperConnection {
         final String connectString = getConnectString();
 
         if (connectString == null) {
-            logger.fatal("DNS Lookup Failed for ZooKeeper: " + hostName);
+            logger.error("DNS Lookup Failed for ZooKeeper: " + hostName);
             return;
         }
 

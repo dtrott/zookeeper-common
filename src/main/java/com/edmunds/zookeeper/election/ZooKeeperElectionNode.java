@@ -15,7 +15,7 @@
  */
 package com.edmunds.zookeeper.election;
 
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 
 /**
  * Represents the known name of a master election node (after the callback from create).
